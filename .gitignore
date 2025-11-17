@@ -1,0 +1,36 @@
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Build artifacts
+target/
+dist/
+node_modules/
+.next/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# Logs
+*.log
+npm-debug.log*
+
+# Cache
+.gradle/
+.maven/
+
+# Project specific
+.mvn/wrapper/
+
+# Archives
+*.zip
+*.tar.gz
