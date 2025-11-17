@@ -1,0 +1,22 @@
+{{- if .Values.backend.enabled }}
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.backend.service.name }}
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ include "carrental.name" . }}
+    component: backend
+    release: {{ .Release.Name }}
+spec:
+  type: {{ .Values.backend.service.type }}
+  selector:
+    app: {{ include "carrental.name" . }}
+    component: backend
+    release: {{ .Release.Name }}
+  ports:
+  - name: http
+    port: {{ .Values.backend.service.port }}
+    targetPort: {{ .Values.backend.service.targetPort }}
+    protocol: TCP
+{{- end }}

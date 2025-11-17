@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: frontend-config
+  namespace: {{ .Release.Namespace }}
+  labels:
+    app: {{ include "carrental.name" . }}
+    release: {{ .Release.Name }}
+data:
+  VITE_API_BASE_URL: {{ .Values.frontend.environment.VITE_API_BASE_URL | quote }}
+  NODE_ENV: {{ .Values.frontend.environment.NODE_ENV | quote }}
